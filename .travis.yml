@@ -3,5 +3,6 @@ compiler:
   - gcc
 install:
   - sudo apt-get install libstdc++6-4.6-dev
+  - sudo apt-get install ibc6-4.6-dev
 # Change this to your needs
 script: ./test.sh
