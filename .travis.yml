@@ -2,4 +2,4 @@ nguage: cpp
 compiler:
   - gcc
 # Change this to your needs
-script: make
+script: ./test.sh
