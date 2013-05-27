@@ -2,6 +2,8 @@ nguage: cpp
 compiler:
   - gcc
 install:
+  - sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
+  - sudo apt-get update
   - sudo apt-get install libstdc++6-4.6-dev
   - uname -a
   - sudo apt-get install libc6-dev gnupg flex bison build-essential zip curl libncurses5-dev zlib1g-dev pngcrush schedtool libxml2 libxml2-utils g++-multilib lib32z1-dev lib32ncurses5-dev lib32readline-gplv2-dev
