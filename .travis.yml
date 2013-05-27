@@ -1,5 +1,6 @@
 nguage: cpp
 compiler:
   - gcc
+install: libstdc++-dev install-deps
 # Change this to your needs
 script: ./test.sh
