@@ -1,7 +1,7 @@
 nguage: cpp
 compiler:
   - gcc
-install: install-deps
+install:
   - sudo apt-get -qq install libstdc++
 # Change this to your needs
 script: ./test.sh
