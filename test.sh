@@ -3,3 +3,4 @@ chmod a+x ./repo
 
 ./repo init -u https://github.com/olibc/manifest.git
 ./repo sync
+./BUILD -j10
