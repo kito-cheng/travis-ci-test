@@ -4,9 +4,7 @@ compiler:
 install:
   - sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
   - sudo apt-get update
-  - sudo apt-get install libstdc++6-4.6-dev
-  - uname -a
-  - sudo apt-get install build-essential libc6-dev libc6-dev-i386 gcc-multilib 
+  - sudo apt-get install build-essential gcc-multilib g++-multilib
 
 # Change this to your needs
 script: ./test.sh
