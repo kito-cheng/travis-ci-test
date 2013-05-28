@@ -7,4 +7,4 @@ install:
   - sudo apt-get install build-essential gcc-multilib g++-multilib
 
 # Change this to your needs
-script: ./test.sh
+script: travis-ci/test.sh
