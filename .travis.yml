@@ -2,9 +2,9 @@ nguage: cpp
 compiler:
   - gcc
 install:
-  - sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
   - sudo apt-get update
   - sudo apt-get install build-essential gcc-multilib g++-multilib
 
+#  - sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
 # Change this to your needs
-script: travis-ci/test.sh
+script: travis-ci/travis-ci.sh
