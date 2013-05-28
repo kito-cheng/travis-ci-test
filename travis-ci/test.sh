@@ -7,4 +7,5 @@ echo "OLIBC_CONF:=.config-olibc" > Makefile
 echo "-include \$(OLIBC_CONF)" >> Makefile
 echo "include build/core/olibc.mk" >> Makefile
 echo "include build/core/main.mk" >> Makefile
-./BUILD.sh -j10
+echo "build/core/BUILD-real.sh \$@" > ./BUILD.sh
+./BUILD.sh -j10 OLIBC_CONF=travis-ci/configs/.config-olibc
