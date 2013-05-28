@@ -13,5 +13,36 @@ echo "include build/core/main.mk" >> Makefile
 echo "build/core/BUILD-real.sh \$@" > ./BUILD.sh
 for config in travis-ci/configs/*
 do
-  ./BUILD.sh -j10 OLIBC_CONF=$config
+  x=`grep EXT_MALLOC_LEAK_CHECK=true $config`
+
+  if [ "$x" !=  '' ]
+  then
+    MALLOC_LEAK=libc_malloc_debug_leak
+  else
+    MALLOC_LEAK=
+  fi
+
+  x=`grep EXT_MALLOC_ANDROID_QEMU_INSTRUMENT=true $config`
+
+  if [ "$x" !=  '' ]
+  then
+    MALLOC_QEMU=libc_malloc_debug_qemu
+  else
+    MALLOC_QEMU=
+  fi
+
+
+  ./BUILD.sh -j10 OLIBC_CONF=$config \
+             bionic-unit-tests-static bionic-unit-tests \
+             bionic-benchmarks \
+             hello-static hello \
+             hello-cxx-static hello-cxx \
+             $(MALLOC_LEAK) \
+             $(MALLOC_QEMU)
+
+  rc=$?
+  if [[ $rc != 0 ]] ; then
+      echo "Build error on $config"
+      exit $rc
+  fi
 done
