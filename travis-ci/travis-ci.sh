@@ -10,7 +10,8 @@ echo "OLIBC_CONF:=.config-olibc" > Makefile
 echo "-include \$(OLIBC_CONF)" >> Makefile
 echo "include build/core/olibc.mk" >> Makefile
 echo "include build/core/main.mk" >> Makefile
-echo "build/core/BUILD-real.sh \$@" > ./BUILD.sh
+echo "build/core/BUILD-real.sh \$@" > BUILD.sh
+chmod +x BUILD.sh
 for config in travis-ci/configs/*
 do
   x=`grep EXT_MALLOC_LEAK_CHECK=true $config`
