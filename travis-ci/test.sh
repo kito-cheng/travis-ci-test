@@ -35,8 +35,8 @@ do
   ./BUILD.sh -j10 OLIBC_CONF=$config \
              bionic-unit-tests-static bionic-unit-tests \
              bionic-benchmarks \
-             $(MALLOC_LEAK) \
-             $(MALLOC_QEMU)
+             $MALLOC_LEAK \
+             $MALLOC_QEMU
 
   rc=$?
   if [[ $rc != 0 ]] ; then
