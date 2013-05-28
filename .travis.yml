@@ -6,7 +6,7 @@ install:
   - sudo apt-get update
   - sudo apt-get install libstdc++6-4.6-dev
   - uname -a
-  - sudo apt-get install build-essential libc6-dev libc6-dev
+  - sudo apt-get install build-essential libc6-dev libc6-dev-i386 gcc-multilib 
 
 # Change this to your needs
 script: ./test.sh
