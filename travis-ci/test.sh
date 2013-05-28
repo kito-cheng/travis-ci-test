@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+#
+
 curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > repo
 chmod a+x ./repo
 
@@ -8,4 +11,7 @@ echo "-include \$(OLIBC_CONF)" >> Makefile
 echo "include build/core/olibc.mk" >> Makefile
 echo "include build/core/main.mk" >> Makefile
 echo "build/core/BUILD-real.sh \$@" > ./BUILD.sh
-./BUILD.sh -j10 OLIBC_CONF=travis-ci/configs/.config-olibc
+for config in travis-ci/configs/*
+do
+  ./BUILD.sh -j10 OLIBC_CONF=$config
+done
