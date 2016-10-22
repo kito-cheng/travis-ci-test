@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-
+cat /proc/cpuinfo
 curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > repo
 chmod a+x ./repo
 
