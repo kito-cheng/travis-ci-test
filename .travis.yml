@@ -20,12 +20,12 @@ addons:
       - libtool
       - patchutils
       - texinfo
-      - gcc-4.8
-      - g++-4.8
 
 before_install:
   - export MAKEFLAGS="-j3"
-install: true
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  - sudo apt-get update -q
+  - sudo apt-get install gcc-4.8 -yinstale: true
 script:
   - gcc -v
   - g++ -v
