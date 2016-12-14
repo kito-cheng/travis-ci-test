@@ -26,3 +26,4 @@ install: true
 script:
   - gcc -v
   - g++ -v
+  - sudo apt-cache search gcc
