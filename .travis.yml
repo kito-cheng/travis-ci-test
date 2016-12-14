@@ -1,10 +1,28 @@
-nguage: cpp
-compiler:
-  - gcc
-install:
-  - sudo apt-get update
-  - sudo apt-get install build-essential gcc-multilib g++-multilib
+addons:
+  apt:
+    packages:
+      - autoconf
+      - automake
+      - autotools-dev
+      - bc
+      - bison
+      - build-essential
+      - curl
+      - flex
+      - gawk
+      - gperf
+      - libgmp-dev
+      - libmpc-dev
+      - libmpfr-dev
+      - libtool
+      - patchutils
+      - texinfo
+      - gcc-4.8
+      - g++-4.8
 
-#  - sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
-# Change this to your needs
-script: travis-ci/travis-ci.sh
+before_install:
+  - export MAKEFLAGS="-j3"
+install: true
+script:
+  - gcc -v
+  - g++ -v
