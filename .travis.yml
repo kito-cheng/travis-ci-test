@@ -1,5 +1,8 @@
 addons:
   apt:
+    sources:
+    - ubuntu-toolchain-r-test
+  apt:
     packages:
       - autoconf
       - automake
@@ -17,6 +20,8 @@ addons:
       - libtool
       - patchutils
       - texinfo
+      - gcc-4.8
+      - g++-4.8
 
 before_install:
   - export MAKEFLAGS="-j3"
@@ -24,4 +29,6 @@ install: true
 script:
   - gcc -v
   - g++ -v
+  - gcc-4.8 -v
+  - g++-4.8 -v
   - sudo apt-cache search gcc
