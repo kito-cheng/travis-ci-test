@@ -17,8 +17,6 @@ addons:
       - libtool
       - patchutils
       - texinfo
-      - gcc-4.8
-      - g++-4.8
 
 before_install:
   - export MAKEFLAGS="-j3"
